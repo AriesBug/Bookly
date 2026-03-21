@@ -1,13 +1,21 @@
 {
-  "name": "Bookly",
-  "short_name": "Bookly",
-  "description": "Search and read books from Gutenberg and OpenLibrary.",
-  "start_url": "/index.html",
+  "name": "bookly",
+  "short_name": "Lib",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007bff",
+  "background_color": "#8d448d",
+  "theme_color": "#8d448d",
   "icons": [
-    { "src": "/icons/wow.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icons/wew.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/wow.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/wew.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
