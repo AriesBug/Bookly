@@ -1,15 +1,25 @@
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open('bookly-cache').then(cache => cache.addAll([
-      '/',
-      '/index.html',
-      '/static/homes.css'
-    ]))
-  );
+self.addEventListener("install", event => {
+    self.skipWaiting();
+    event.waitUntil(
+        caches.open("todo-cache-v2").then(cache => {
+            return cache.addAll([
+                "/",
+                "/index.html",
+                "/wow.png",
+                "/wew.png"
+            ]);
+        })
+    );
 });
 
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
-  );
+self.addEventListener("activate", event => {
+    event.waitUntil(self.clients.claim());
+});
+
+self.addEventListener("fetch", event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
 });
